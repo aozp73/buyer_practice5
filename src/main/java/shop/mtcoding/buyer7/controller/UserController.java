@@ -61,7 +61,7 @@ public class UserController {
                 response.addCookie(cookie);
             }
 
-            session.setAttribute("principal", username);
+            session.setAttribute("principal", user);
             return "redirect:/";
         }
     }

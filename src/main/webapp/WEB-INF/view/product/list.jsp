@@ -2,7 +2,7 @@
 
     <%@ include file="../layout/header.jsp" %>
 
-        <h1>상품 전체목록</h1>
+        <h1>상품 전체페이지</h1>
         <table border="1">
             <tr>
                 <th>번호</th>

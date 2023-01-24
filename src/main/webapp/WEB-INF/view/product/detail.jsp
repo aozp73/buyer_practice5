@@ -2,7 +2,7 @@
 
     <%@ include file="../layout/header.jsp" %>
 
-        <h1>상품 전체목록</h1>
+        <h1>상품 세부페이지</h1>
         <table border="1">
             <tr>
                 <th>번호</th>
@@ -18,7 +18,14 @@
                     <td>${product.qty}</td>
                     <td>${product.createdAtToString}</td>
                 </tr>
-
         </table>
+        <form action="/product/${product.id}/purchase" method="post">
+            <select name="count">
+                <c:forEach begin="1" end="${product.qty}" var="num">
+                <option value="${num}">${num}</option>
+                </c:forEach>
+            </select>
+            <button type="submit">구매</button>
+        </form>
 
         <%@ include file="../layout/footer.jsp" %>
