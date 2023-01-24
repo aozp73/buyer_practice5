@@ -12,4 +12,8 @@ public interface PurchaseRepository {
     public int insert(@Param("userId") int userId, @Param("productId") int productId, @Param("count") int count);
 
     public List<PurchaseAllDto> findByUserId(int id);
+
+    public Purchase findById(int id);
+
+    public int deleteById(int id);
 }

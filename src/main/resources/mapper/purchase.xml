@@ -19,4 +19,12 @@
     inner join product_tb pr
     on pu.product_id = pr.id;
   </select>
+
+  <select id="findById" resultType="shop.mtcoding.buyer7.model.Purchase">
+    select * from purchase_tb where id = #{id}
+  </select>
+
+  <delete id="deleteById">
+    delete from purchase_tb where id = #{id}
+  </delete>
 </mapper>

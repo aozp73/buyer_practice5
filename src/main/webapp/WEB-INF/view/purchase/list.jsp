@@ -10,12 +10,17 @@
                 <th>구매품</th>
                 <th>구매갯수</th>
             </tr>
-            <c:forEach items="${pruchase}" var="pruchase">
+            <c:forEach items="${purchase}" var="purchase">
                 <tr>
-                    <td>${pruchase.id}</td>
-                    <td>${pruchase.username}</td>
-                    <td>${pruchase.name}</td>
-                    <td>${pruchase.count}</td>
+                    <td>${purchase.id}</td>
+                    <td>${purchase.username}</td>
+                    <td>${purchase.name}</td>
+                    <td>${purchase.count}</td>
+                    <td>
+                        <form action="/product/${purchase.id}/delete" method="post">
+                            <button type="submit">삭제</button>
+                        </form>
+                    </td>
                 </tr>
             </c:forEach>
         </table>

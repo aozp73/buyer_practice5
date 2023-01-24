@@ -54,8 +54,23 @@ public class PurchaseController {
 
         List<PurchaseAllDto> purchaseList = purchaseRepository.findByUserId(user.getId());
 
-        model.addAttribute("pruchase", purchaseList);
+        model.addAttribute("purchase", purchaseList);
 
         return "purchase/list";
+    }
+
+    @PostMapping("/product/{id}/delete")
+    public String delete(@PathVariable int id) {
+        User user = (User) session.getAttribute("principal");
+        if (user == null) {
+            return "redirect:/notfound";
+        }
+
+        int res = purchaseService.삭제하기(id);
+        if (res == -1) {
+            return "redirect:/notfound";
+        }
+
+        return "redirect:/purchase";
     }
 }
